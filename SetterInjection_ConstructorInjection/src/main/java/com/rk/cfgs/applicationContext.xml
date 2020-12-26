@@ -6,15 +6,14 @@
 <!-- cfg Spring bean class -->
 <bean id="stud" class="com.rk.comp.Student">
 
-<!-- <constructor-arg value="101"/>
+<constructor-arg value="101"/>
 <constructor-arg value="raja"/>
 <constructor-arg value="hyd"/>
 <constructor-arg value="85.88"/>
--->
 
-<property name="sno" value="101"/>
-<property name="sname" value="raja"/>
-<property name="sadd" value="bbs"/>
+<!-- <property name="sno" value="101"/>  -->
+ <property name="sname" value="raja"/>
+ <property name="sadd" value="bbs"/> -->
 
 </bean>
 

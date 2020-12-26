@@ -4,17 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <!-- cfg Spring bean class -->
-<bean id="stud" class="com.rk.comp.Student">
-
-<constructor-arg value="101"/>
-<constructor-arg value="raja"/>
-<constructor-arg value="hyd"/>
-<constructor-arg value="85.88"/>
-
-<!-- <property name="sno" value="101"/>  -->
- <property name="sname" value="raja"/>
- <property name="sadd" value="bbs"/> -->
-
+<bean id="mk" class="com.rk.comp.Mark">
+	<constructor-arg index="2" value="90"/>
+	<constructor-arg value="80"/>
+	<constructor-arg value="70"/>
 </bean>
 
 </beans>

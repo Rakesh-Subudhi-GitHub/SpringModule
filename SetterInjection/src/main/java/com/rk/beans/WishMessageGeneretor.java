@@ -11,6 +11,10 @@ public class WishMessageGeneretor {
 		System.out.println("WishMessageGenerator:: setDate(-)");
 		this.date = date;
 	}
+	public WishMessageGeneretor()
+	{
+		System.out.println("0param constructor");
+	}
 	
 	//B.logic using the Injected Date class obj in the b.logic
 	//create method

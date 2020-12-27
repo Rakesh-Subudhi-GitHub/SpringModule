@@ -14,7 +14,8 @@ public class B {
 
 	@Override
 	public String toString() {
-		return "B [a=" + a + "]";
+//		return "B [a=" + a + "]";
+		return "B [a=" ;
 	}
 	
 	

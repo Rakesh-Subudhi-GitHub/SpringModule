@@ -28,6 +28,9 @@ public class CyclicDependencyInjectionTest {
 		a=factory.getBean("a1",A.class);
 		System.out.println(a);
 		
+		b=factory.getBean("b1",B.class);
+		System.out.println(b);
+		
 	}//main
 
 }//class

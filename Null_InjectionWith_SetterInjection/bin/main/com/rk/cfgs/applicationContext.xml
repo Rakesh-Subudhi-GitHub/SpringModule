@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+ <bean id="dob"  class="java.util.Date">
+            <property name="year" value="90"/>
+            <property name="month" value="11"/>
+            <property name="date" value="12"/>
+    </bean>
+    
+    <bean id="doj"  class="java.util.Date">
+            <property name="year" value="114"/>
+            <property name="month" value="10"/>
+            <property name="date" value="22"/>
+    </bean>
+    
+    <bean id="dom"  class="java.util.Date">
+            <property name="year" value="117"/>
+            <property name="month" value="3"/>
+            <property name="date" value="15"/>
+    </bean>
+    
+<bean id="rajainfo" class="com.rk.beans.PersionInfo">
+<property name="ano" value="4514787985"/>
+<property name="name" value="raja"/>
+<property name="dob" ref="dob"/>
+<property name="dom" ref="dom"/>
+<property name="doj" ref="doj"/>
+</bean>
+
+
+<bean id="raviinfo" class="com.rk.beans.PersionInfo">
+<property name="ano" value="8888787985"/>
+<property name="name" value="ravi"/>
+<property name="dob" ref="dob"/>
+<property name="dom"><null/></property>
+<property name="doj"><null/></property>
+</bean>
+
+<bean id="rajeshinfo" class="com.rk.beans.PersionInfo">
+<property name="ano" value="514787985"/>
+<property name="name" value="rajesh"/>
+<property name="dob"><null/></property>
+<property name="dom" ref="dom"/>
+<property name="doj" ref="doj"/>
+</bean>
+</beans>

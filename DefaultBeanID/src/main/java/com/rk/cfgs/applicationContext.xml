@@ -20,13 +20,25 @@
 
 <bean id="CompStudent" class="com.rk.bean.CourseMaterial" parent="1srYearCourse">
 <property name="subject">
-<set merge="default">  	<!-- so beans tag its set true so its by default set                 merge="true" -->
-<value>Comp</value>                   <!-- merge= true/false set                       then beans tag not work  -->
+<set merge="default">  
+<value>Comp</value> 
 <value>Mech</value>
 <value>CompSci</value>
 <value>C</value>
 </set>
 
+</property>
+</bean>
+
+<!-- with out bean id -->
+<bean class="com.rk.bean.CourseMaterial">
+<property name="subject">
+<set merge="default">  
+<value>MECH</value> 
+<value>CHEMESTRY</value>
+<value>ETC</value>
+<value>ELE</value>
+</set>
 </property>
 </bean>
 

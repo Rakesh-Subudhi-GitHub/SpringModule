@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Default-Merge=" true set then calling any beans properties merge="default" then its work -->
 
 <bean id="1srYearCourse" class="com.rk.bean.CourseMaterial" abstract="true">
 <property name="subject">
@@ -18,8 +20,8 @@
 
 <bean id="CompStudent" class="com.rk.bean.CourseMaterial" parent="1srYearCourse">
 <property name="subject">
-<set merge="true">
-<value>Comp</value>
+<set merge="default">  	<!-- so beans tag its set true so its by default set                 merge="true" -->
+<value>Comp</value>                   <!-- merge= true/false set                       then beans tag not work  -->
 <value>Mech</value>
 <value>CompSci</value>
 <value>C</value>

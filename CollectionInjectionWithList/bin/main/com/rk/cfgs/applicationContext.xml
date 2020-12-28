@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="sysDate"  class="java.util.Date"/>
+  <bean id="dobDate"  class="java.util.Date">
+       <property name="year" value="90"/>
+       <property name="month" value="11"/>
+       <property name="date" value="22"/>
+  </bean>
+
+<!-- Array list cfgs -->
+<bean id="m" class="com.rk.beans.MarkInfo">
+	<property name="marks">
+			<array>
+				<value> 80</value>
+				<value>70</value>
+				<value>90</value>
+			</array>
+	</property>
+</bean>
+
+<!-- List cfgs -->
+<bean id="name" class="com.rk.beans.Collage">
+
+<property name="studName">
+<list>
+<value>raja</value>
+<value>rajesh</value>
+<value>rani</value>
+<value>rakesh</value>
+<value>ramesh</value>
+</list>
+</property>
+
+<property name="dateLIst">
+           <list value-type="java.util.Date">
+              <ref bean="sysDate"/>
+              <ref bean="dobDate"/>
+           </list>
+     </property>
+     
+</bean>
+</beans>

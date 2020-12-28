@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- common properties -->
+<bean id="baseCar" class="com.rk.beans.Car" abstract="true">
+
+<property name="engineCC" value="1500"/>
+<property name="model" value="swift"/>
+<property name="company" value="suzuki"/>
+<property name="fuleType" value="diesle"/>
+<property name="type" value="hatchcar"/>
+</bean>
+
+
+<!-- fast persion -->
+<bean id="rajaCar" class="com.rk.beans.Car" parent="baseCar">
+<property name="owner" value="Raja"/>
+<property name="engineNo" value="85858788"/>
+<property name="color" value="red"/>
+<property name="regNo" value="BGVCD8578"/>
+<property name="area" value="hyd"/>
+</bean>
+
+<!-- 2nd persion -->
+<bean id="raviCar" class="com.rk.beans.Car" parent="baseCar">
+<property name="owner" value="Ravi"/>
+<property name="engineNo" value="98989885"/>
+<property name="color" value="green"/>
+<property name="regNo" value="BGVCD9999"/>
+<property name="area" value="bbsr"/>
+</bean>
+</beans>

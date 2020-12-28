@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="sysDate"  class="java.util.Date"/>
+  <bean id="dobDate"  class="java.util.Date">
+       <property name="year" value="90"/>
+       <property name="month" value="11"/>
+       <property name="date" value="22"/>
+  </bean>
+
+<!-- Array list cfgs -->
+<bean id="m" class="com.rk.beans.MarkInfo">
+	<property name="marks">
+			<array>
+				<value> 80</value>
+				<value>70</value>
+				<value>90</value>
+			</array>
+	</property>
+</bean>
+
+<!-- List collection cfgs -->
+<!-- setter injection -->
+<bean id="name" class="com.rk.beans.Collage">
+
+<property name="studName">
+<list>
+<value>raja</value>
+<value>rajesh</value>
+<value>rani</value>
+<value>rakesh</value>
+<value>ramesh</value>
+</list>
+</property>
+
+<property name="dateLIst">
+           <list value-type="java.util.Date">
+              <ref bean="sysDate"/>
+              <ref bean="dobDate"/>
+           </list>
+     </property>
+     
+</bean>
+
+<!-- Set collection cfgs -->
+<!-- constructor injection -->
+<bean id="contact" class="com.rk.beans.ContactInfo">
+
+<constructor-arg name="phonNum">
+<set value-type="java.lang.Long">
+<value>8888888888</value>
+<value>9999999999</value>
+<value>8585858585</value>
+</set>
+</constructor-arg>
+
+<constructor-arg name="dates">
+<set value-type="java.util.Date">
+<ref bean="sysDate"/>
+<ref bean="dobDate"/>
+<ref bean="dobDate"/>
+</set>
+</constructor-arg>
+</bean>
+
+<!-- Map collection cfgs -->
+<!-- Setter injection -->
+<bean id="emp" class="com.rk.beans.Company">
+<property name="emp">
+<map key-type="java.lang.Integer" value-type="java.lang.String">
+
+<entry><!-- Elemets 1 -->
+<key><value>100</value></key><!-- key -->
+<value>rakesh</value><!-- values -->
+</entry>
+
+<entry><!-- Elements 2 -->
+<key><value>101</value></key>
+<value>rajesh</value>
+</entry>
+
+<entry key="102" value="ramesh"/><!-- Elements 3 -->
+<entry key="103" value="kamesh"/>
+
+</map>
+</property>
+
+<!-- date value -->
+<property name="empDate">
+<map key-type="java.lang.String" value-type="java.util.Date">
+
+<entry>
+<key><value>toDay</value></key>
+<ref bean="sysDate"/>
+</entry>
+
+<entry key="dob" value-ref="dobDate"/>
+<entry key="sod" value-ref="sysDate"/>
+</map>
+</property>
+</bean>
+</beans>

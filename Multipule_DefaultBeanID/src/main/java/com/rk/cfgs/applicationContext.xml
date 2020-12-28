@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- Default-Merge=" true set then calling any beans properties merge="default" then its work -->
+
+<bean id="1srYearCourse" class="com.rk.bean.CourseMaterial" abstract="true">
+<property name="subject">
+<set>
+<value>C</value>
+<value>Math</value>
+<value>English</value>
+<value>physic</value>
+<value>ED</value>
+</set>
+
+</property>
+</bean>
+
+<!-- fast default bean id -->
+<bean class="com.rk.bean.CourseMaterial" parent="1srYearCourse">
+<property name="subject">
+<set merge="default">  
+<value>Comp</value> 
+<value>Mech</value>
+<value>CompSci</value>
+<value>C</value>
+</set>
+
+</property>
+</bean>
+
+<!-- 2nd default bean id -->
+<bean class="com.rk.bean.CourseMaterial">
+<property name="subject">
+<set merge="default">  
+<value>MECH</value> 
+<value>CHEMESTRY</value>
+<value>ETC</value>
+<value>ELE</value>
+</set>
+</property>
+</bean>
+
+<!-- 3rd default bean id -->
+<bean class="com.rk.bean.CourseMaterial">
+<property name="subject">
+<set merge="default">  
+<value>electronic</value> 
+<value>power</value>
+<value>math2</value>
+<value>elecourse</value>
+</set>
+</property>
+</bean>
+
+<!-- 4th default bean id -->
+<bean class="com.rk.bean.CourseMaterial">
+<property name="subject">
+<set merge="default">  
+<value>civil</value> 
+<value>drawaing</value>
+<value>ciletower</value>
+<value>math3</value>
+</set>
+</property>
+</bean>
+
+</beans>

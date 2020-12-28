@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<bean id="1srYearCourse" class="com.rk.bean.CourseMaterial" abstract="true">
+<property name="subject">
+<set>
+<value>C</value>
+<value>Math</value>
+<value>English</value>
+<value>physic</value>
+<value>ED</value>
+</set>
+
+</property>
+</bean>
+
+<bean id="CompStudent" class="com.rk.bean.CourseMaterial" parent="1srYearCourse">
+<property name="subject">
+<set merge="true">
+<value>Comp</value>
+<value>Mech</value>
+<value>CompSci</value>
+<value>C</value>
+</set>
+
+</property>
+</bean>
+
+</beans>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+
+<!-- common properties -->
+<bean id="baseCar" class="com.rk.beans.Car" abstract="true">
+
+<constructor-arg name="engineCC" value="1500"/>
+<constructor-arg name="model" value="swift"/>
+<constructor-arg name="company" value="suzuki"/>
+<constructor-arg name="fuleType" value="diesle"/>
+<constructor-arg name="type" value="hatchcar"/>
+
+</bean>
+
+
+<!-- fast persion -->
+<bean id="rajaCar" class="com.rk.beans.Car" parent="baseCar">
+<constructor-arg name="owner" value="Raja"/>
+<constructor-arg name="engineNo" value="85858788"/>
+<constructor-arg name="color" value="red"/>
+<constructor-arg name="regNo" value="BGVCD8578"/>
+<constructor-arg name="area" value="hyd"/>
+</bean>
+
+<!-- 2nd persion -->
+<bean id="raviCar" class="com.rk.beans.Car" parent="baseCar">
+<constructor-arg name="owner" value="Ravi"/>
+<constructor-arg name="engineNo" value="98989885"/>
+<constructor-arg name="color" value="green"/>
+<constructor-arg name="regNo" value="BGVCD9999"/>
+<constructor-arg name="area" value="bbsr"/>
+</bean>
+</beans>

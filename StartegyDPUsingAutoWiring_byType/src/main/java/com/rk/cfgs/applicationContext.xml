@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- cfg Dependence class -->
+<bean id="dtdc" class="com.rk.comp.DTDC"/>   <!-- by changing here courier name its take care about it  -->
+<bean id="bluedart" class="com.rk.comp.BlueDart" primary="true"/>
+<!-- <bean id="firstflight" class="com.rk.comp.FastFlight"/> -->
+
+<!-- Target class -->
+<bean id="fpkt" class="com.rk.comp.Flipkart" autowire="byType"/>
+
+</beans>

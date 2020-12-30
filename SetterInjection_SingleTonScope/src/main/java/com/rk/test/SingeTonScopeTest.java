@@ -29,8 +29,8 @@ public class SingeTonScopeTest {
 		
 		System.out.println();
 		System.out.println("--------------------------------------------------------------------------------------------------");
-		generetor1=factory.getBean("wmg1",WishMessageGeneretor.class);
-		generetor2=factory.getBean("wmg1",WishMessageGeneretor.class);
+		generetor1=factory.getBean("wmg",WishMessageGeneretor.class);
+		generetor2=factory.getBean("wmg",WishMessageGeneretor.class);
 		generetor3=factory.getBean("wmg",WishMessageGeneretor.class);
 	
 		System.out.println("generator1=hashcode  "+generetor1.hashCode()+"    generator2=hashcode   "+generetor2.hashCode());

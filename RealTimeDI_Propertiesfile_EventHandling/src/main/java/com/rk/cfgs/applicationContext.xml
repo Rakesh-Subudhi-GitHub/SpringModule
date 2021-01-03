@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- configer DataSourse -->
+<bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+
+<property name="driverClassName" value="${jdbc.driver}"/>
+<property name="url" value="${jdbc.url}"/>
+<property name="username" value="${jdbc.user}"/>
+<property name="password" value="${jdbc.pwd}"/>
+
+</bean>
+
+<!-- cfgs dao class -->
+<bean id="custDao" class="com.rk.dao.CustomerDAOImpl">
+<constructor-arg ref="ds"/>
+</bean>
+
+<!-- cfgs Service class -->
+<bean id="custService" class="com.rk.service.CustomerServiceMgmtImpl">
+<constructor-arg ref="custDao"/>
+</bean>
+
+<!-- cfgs Control class -->
+<bean id="control" class="com.rk.control.CustomerController">
+<constructor-arg ref="custService"/>
+</bean>
+
+<!-- properties file config -->
+<bean id="pphc" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+	<property name="location" value="com/rk/commons/jdbc.properties"/>
+</bean>
+
+<bean class="com.rk.listener.MonitorListener"/>
+</beans>
+
+
